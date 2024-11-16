@@ -1,0 +1,52 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <h1>Quality. Affordability. Dedication</h1>
+      <p>Join thousands of satisfied customers who have made ShopEase their go-to platform for electronics. Explore our catalog today and take the first step toward smarter, stress-free shopping!</p>
+
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <div class="form-container">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+        <h2>Create Your Account</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <label>
+                <input type="text" name="full_name" placeholder="Enter your Full Name" required>
+            </label>
+            <label>
+                <input type="email" name="email" placeholder="Enter your Email Address" required>
+            </label>
+            <label>
+                <input type="password" name="password" placeholder="Create a Password" required>
+            </label>
+            <label>
+                <input type="password" name="C_password" placeholder="Confirm Your Password" required>
+            </label>
+            <button type="submit" class="btn">Sign Up</button>
+
+          <p>Already have an account? <a href="{% url 'login' %}">Sign in here</a></p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
